@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('fieldChooseSelects');
+  this.route('chart');
 });
 
 export default Router;

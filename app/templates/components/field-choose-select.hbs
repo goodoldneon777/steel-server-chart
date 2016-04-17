@@ -1,0 +1,23 @@
+
+<select class="form-control" onchange={{action "changedSelect" value="target.value"}}>
+{{#each options as |option|}}
+	<option value="{{option.value}}">{{option.text}}</option>
+{{/each}}
+</select>
+
+
+<div class="children">
+
+	{{#if activeOption}}
+		{{#each options as |option|}}
+			{{#if (eq option.value activeOption)}}
+				{{#each option.children as |child|}}
+					{{field-choose-select
+						selects = selects
+						name = child}}
+				{{/each}}
+ 			{{/if}}
+		{{/each}}
+	{{/if}}
+
+</div>

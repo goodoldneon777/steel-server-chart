@@ -1,0 +1,16 @@
+{{!-- {{#if fieldChooseSelect}}
+yep
+{{/if}}
+ --}}
+
+{{field-choose-select
+	area = area
+	selects = fieldChooseSelect
+	name = "category"
+	filterToggle = (action 'filterToggle')}}
+
+{{#if filterFlag}}
+	{{field-choose-filter
+		foo = "hi"
+		filters = fieldChooseFilter}}
+{{/if}}
