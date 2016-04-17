@@ -11,7 +11,7 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },
-    modulePrefix: 'data-chart-2',
+    modulePrefix: 'steel-server-chart',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

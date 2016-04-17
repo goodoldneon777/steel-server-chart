@@ -13,8 +13,10 @@
 			{{#if (eq option.value activeOption)}}
 				{{#each option.children as |child|}}
 					{{field-choose-select
+						area = area
 						selects = selects
-						name = child}}
+						name = child
+						filterToggle = (action 'filterToggle')}}
 				{{/each}}
  			{{/if}}
 		{{/each}}

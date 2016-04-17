@@ -1,7 +1,7 @@
 {
-  "name": "data-chart-2",
+  "name": "steel-server-chart",
   "version": "0.0.0",
-  "description": "Small description for data-chart-2 goes here",
+  "description": "Small description for steel-server-chart goes here",
   "private": true,
   "directories": {
     "doc": "doc",

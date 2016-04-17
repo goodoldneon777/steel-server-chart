@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     classNames: ['c-fieldChooseArea'],
     actions: {
-        filterToggle: function(param){
+        filterToggle(param) {
             if (param === true) {
                 this.set('filterFlag', true);
             } else if (param === false) {
