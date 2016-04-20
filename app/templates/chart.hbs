@@ -1,30 +1,15 @@
 <div class="l-body">
 	<div class="l-left">
 
-{{!-- {{#if model}}
-	model exists<br>
-{{/if}}
-{{#if model.fieldChooseSelect}}
-	model.fieldChooseSelect exists<br>
-{{/if}}
-{{#if selects}}
-	selects exists<br>
-{{/if}}
-
-{{#each selects as |foo|}}
-	{{foo.name}}
-{{/each}}
- --}}
-
 		<div class="accordion panel-group" role="tablist" aria-multiselectable="true">
 
 		    <div class="panel panel-primary">
 		        <div class="panel-heading" role="button" data-toggle="collapse" data-parent=".accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 		            <h4 class="panel-title">Main</h4>
 		        </div>
-		        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 		            <div class="panel-body">
-		    			{{main-axes
+		    			{{axes-section
 		    				fieldChooseSelect = model.fieldChooseSelect
 		    				fieldChooseFilter = model.fieldChooseFilter}}
 		            </div>
@@ -35,9 +20,11 @@
 				<div class="panel-heading" role="button" data-toggle="collapse" data-parent=".accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 			  		<h4 class="panel-title">Filters</h4>
 				</div>
-				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
 			  		<div class="panel-body">
-						{{!-- {{main-filters model=model}} --}}
+						{{filters-section
+		    				fieldChooseSelect = model.fieldChooseSelect
+		    				fieldChooseFilter = model.fieldChooseFilter}}
 			  		</div>
 				</div>
 			</div>
@@ -47,12 +34,6 @@
 	</div>
 </div>
 
-
-{{!-- {{field-choose-area
-	selects = model.fieldChooseSelects
-	filters = model.fieldChooseFilters
-	
-	nameUnique="root"}} --}}
 
 
 

@@ -9,13 +9,24 @@
 	</div>
 
 	<div class="col-xs-8 noPad-xs">
+		<div class="col-xs-1 noPad-xs"></div>
+
 		{{#if (gte boxCount 1)}}
-			<div class="col-xs-6 noPad-xs">
-				<input type="text" class="form-control">
-			</div>
+			{{#if isArray}}
+				<div class="col-xs-11 noPad-xs">
+					<input type="text" class="form-control">
+				</div>
+			{{else}}
+				<div class="col-xs-5 noPad-xs">
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="col-xs-1 noPad-xs"></div>
+			{{/if}}
 		{{/if}}
+
 		{{#if (eq boxCount 2)}}
-			<div class="col-xs-6 noPad-xs">
+			<div class="col-xs-5 noPad-xs">
 				<input type="text" class="form-control">
 			</div>
 		{{/if}}

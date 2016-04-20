@@ -18,21 +18,26 @@ export default Ember.Component.extend({
 	},
 	setBoxCount: function() {
 		var activeOption = this.get('activeOption');
-		var boxCount = null;
+		var boxCount = 0;
+		var isArray = false;
 
 		switch (activeOption) {
-			case 'none':
-				boxCount = 0;
-				break;
 			case 'range':
 				boxCount = 2;
 				break;
+			case 'in':
+				boxCount = 1
+				isArray = true;
+			case 'not_in':
+				boxCount = 1
+				isArray = true;
 			default:
 				boxCount = 1;
 				break;
 		}
 
 		this.set('boxCount', boxCount);
+		this.set('isArray', isArray);
 	},
 	initialize: function() {
 		this.setOperators();
