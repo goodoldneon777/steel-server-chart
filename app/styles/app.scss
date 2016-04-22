@@ -4,8 +4,21 @@
 $padding: 0.5em;
 
 
+.submit-btn-container {
+  margin-bottom: $padding * 3;
+
+  .submit-btn {
+    padding: $padding * 1.2;
+    width: 100%;
+    font-size: 1.8em;
+  }
+}
+
+
 .c-filters-section {
+
   .filter-item {
+
     .title {
       background-color: #d9edf7;
       font-size: 1.2em;
@@ -35,11 +48,13 @@ $padding: 0.5em;
 
 
 //Components
-.c-mainAxes {
-  h4 {
-    margin-top: 0;
-    padding: $padding / 2;
+.c-main-section {
+
+  .title {
     background-color: #d9edf7;
+    font-size: 1.2em;
+    padding-top: $padding * 0.5;
+    padding-bottom: $padding * 0.5;
   }
 }
 

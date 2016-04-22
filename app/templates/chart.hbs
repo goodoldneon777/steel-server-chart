@@ -1,6 +1,10 @@
 <div class="l-body">
 	<div class="l-left">
 
+		<div class="submit-btn-container">
+			<button type="button" class="submit-btn btn btn-xlarge btn-success">Generate Chart</button>
+		</div>
+
 		<div class="accordion panel-group" role="tablist" aria-multiselectable="true">
 
 		    <div class="panel panel-primary">
@@ -9,7 +13,7 @@
 		        </div>
 		        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 		            <div class="panel-body">
-		    			{{axes-section
+		    			{{main-section
 		    				fieldChooseSelect = model.fieldChooseSelect
 		    				fieldChooseFilter = model.fieldChooseFilter}}
 		            </div>
