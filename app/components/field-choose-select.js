@@ -3,28 +3,26 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     classNames: ['c-fieldChooseSelect'],
     actions: {
-        changedSelect(param) {   //When a select is changed.
-            var activeOption = param;
+        changedSelect(activeOption) {   //When a select is changed.
+            var activeOption = activeOption;
             var prevOption = this.get('activeOption');
 
             this.set('activeOption', activeOption);    //Set to the selected option.
             this.setActiveOption();
-
-            // this.sendAction('newActiveOption', activeOption);
-            this.sendAction('feed', ['newActiveOption', activeOption, prevOption]);
+            this.sendAction('feed', ['newActiveOption', activeOption, prevOption]); //Bubble-up the new and previous active options.
         },
         filterToggle(param) {
             var filterEnable = this.get('filterEnable');
 
             //Don't bubble-up child's filterEnable if this component's filterEnable is false. In other words, filterEnable will be false if any active options have filterEnable = false.
             if (!filterEnable) {
-                this.sendAction('filterToggle', false);
+                this.sendAction('filterToggle', false); //Bubble-up filter disable.
             } else {
-                this.sendAction('filterToggle', param);
+                this.sendAction('filterToggle', param); //Bubble-up whatever was passed to this function.
             }
         },
         feed(params) {
-            this.sendAction('feed', params);
+            this.sendAction('feed', params);    //Bubble-up whatever was sent to the feed.
         }
     },
 	setSelect: function() {

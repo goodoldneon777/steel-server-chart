@@ -25,7 +25,7 @@ export default Ember.Component.extend({
                 }
             }
 
-            this.sendAction('feed', params);
+            this.sendAction('feed', params);    //Bubble up whatever was sent to the feed.
         }
     },
     initialize: function(){
