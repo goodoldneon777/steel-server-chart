@@ -3,10 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	classNames: ['c-fieldChooseFilter'],
     actions: {
-        changedSelect: function(selected) {   //When a select is changed.
-            this.set('activeOption', selected);    //Set to the selected option.
+        changedSelect: function(activeOption) {   //When a select is changed.
+            this.set('activeOption', activeOption);    //Set to the selected option.
            	this.setBoxCount();
-            console.log(selected);
         }
     },
 	setOperators: function() {
@@ -22,6 +21,9 @@ export default Ember.Component.extend({
 		var isArray = false;
 
 		switch (activeOption) {
+			case 'none':
+				boxCount = 0;
+				break;
 			case 'range':
 				boxCount = 2;
 				break;

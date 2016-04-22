@@ -27,6 +27,7 @@ type Option struct {
     Value string `json:"value"`
     YAxisEnable bool `json:"yAxisEnable"`
     XAxisEnable bool `json:"xAxisEnable"`
+    ShowInFilters bool `json:"showInFilters"`
     FilterEnable bool `json:"filterEnable"`
     Children []string `json:"children"`
 }

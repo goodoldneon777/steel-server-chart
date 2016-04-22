@@ -26,7 +26,7 @@ func FieldChooseSelectsBuild(filterName string) OutputJSON {
 
 
     query := `
-        SELECT o.name_id, o.option_text, o.option_value, o.show_in_yaxis_flag, o.show_in_xaxis_flag, o.show_filter_flag, c.child_name_id
+        SELECT o.name_id, o.option_text, o.option_value, o.show_in_yaxis_flag, o.show_in_xaxis_flag, o.show_in_filters_flag, o.show_filter_flag, c.child_name_id
         FROM param_input as i
         INNER JOIN param_dropdown_option as o
             ON i.name_id = o.name_id
@@ -64,9 +64,10 @@ func FieldChooseSelectsBuild(filterName string) OutputJSON {
         var option_value string     //Clear on each iteration.
         var show_in_yaxis_flag int  //Clear on each iteration.
         var show_in_xaxis_flag int  //Clear on each iteration.
+        var show_in_filters_flag int  //Clear on each iteration.
         var show_filter_flag int    //Clear on each iteration.
         var child_name_id string    //Clear on each iteration.
-        rows.Scan(&name_id, &option_text, &option_value, &show_in_yaxis_flag, &show_in_xaxis_flag, &show_filter_flag, &child_name_id)    //Assign row data to variables.        
+        rows.Scan(&name_id, &option_text, &option_value, &show_in_yaxis_flag, &show_in_xaxis_flag, &show_in_filters_flag, &show_filter_flag, &child_name_id)    //Assign row data to variables.        
 
 
         //If the loop has gotten to a new dropdown (i.e. a new name_id), then we want to "add" the previous dropdown we were building.
@@ -101,6 +102,12 @@ func FieldChooseSelectsBuild(filterName string) OutputJSON {
             option.XAxisEnable = true
         } else {
             option.XAxisEnable = false
+        }
+
+        if show_in_filters_flag == 1 {
+            option.ShowInFilters = true
+        } else {
+            option.ShowInFilters = false
         }
 
         if show_filter_flag == 1 {

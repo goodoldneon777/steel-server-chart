@@ -48,8 +48,8 @@ export default Ember.Component.extend({
             } else if (area === 'xAxis') {
                 if (item.xAxisEnable) { 
                     return true; }
-            } else if (area === 'filter') {
-                if (item.filterEnable) { 
+            } else if (area === 'filters') {
+                if (item.showInFilters) { 
                     return true; }
             } else {
                 return true;
@@ -60,7 +60,6 @@ export default Ember.Component.extend({
     },
 	setActiveOption: function() {
 		var component = this;
-        var area = this.get('area');
         var activeOption = this.get('options')[0].value;
 
 		if (!this.get('activeOption')) {  //If the user didn't select an option...
@@ -73,13 +72,15 @@ export default Ember.Component.extend({
 
         this.set('filterEnable', option.filterEnable);
 
-        if (option.filterEnable) {    //If the option shouldn't have a filter...
+        if (option.filterEnable) {    //If the option should have a filter...
             this.sendAction('filterToggle', true);
         } else {
             this.sendAction('filterToggle', false);
         }
 	},
 	initialize: function(){
+        var area = this.get('area');
+
         this.setSelect();
         this.setOptions();
         this.setActiveOption();

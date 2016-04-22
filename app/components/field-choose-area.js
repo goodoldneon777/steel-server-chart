@@ -34,8 +34,11 @@ export default Ember.Component.extend({
 
         var selects = this.get('fieldChooseSelect').filter(function(item) {    //Filter for the target select.
             if (area === 'yAxis') {
-                // console.log(item.name);
                 if (item.get('yAxisEnable') === true) { return true; }
+            } else if (area === 'xAxis') {
+                if (item.get('xAxisEnable') === true) { return true; }
+            } else if (area === 'filters') {
+                if (item.get('filterEnable') === true) { return true; }
             }
         });
     }.on("init")

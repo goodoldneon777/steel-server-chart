@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    classNames: ['c-filters-section'],
 	actions: {
 		remove: function(params) {
 		    var filterIDArr = this.get('filterIDArr').toArray();
@@ -19,7 +20,6 @@ export default Ember.Component.extend({
 				var filterIndex = params[1];
 				this.deleteFilter(filterIndex);
 			}
-
 			// console.log(params);
 		}
 	},

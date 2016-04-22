@@ -4,6 +4,18 @@
 $padding: 0.5em;
 
 
+.c-filters-section {
+  .filter-item {
+    .title {
+      background-color: #d9edf7;
+      font-size: 1.2em;
+      padding-top: $padding * 0.5;
+      padding-bottom: $padding * 0.5;
+    }
+  }
+}
+
+
 
 //Pages
 .accordion {
@@ -11,6 +23,9 @@ $padding: 0.5em;
   margin-top: $padding;
   float: left;
 
+  .panel-title {
+    font-size: 1.4em;
+  }
   .panel-body {
     padding: 0;
   }
