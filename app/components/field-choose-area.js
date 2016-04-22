@@ -12,7 +12,7 @@ export default Ember.Component.extend({
         },
         feed(params) {
             var feedType = params[0];
-            var filterIndex = this.get('filterIndex');
+            var filterIndex = this.get('filterIndex');  //Location in filter list (0-based).
 
             if (feedType === 'newActiveOption') {
                 var activeOption = params[1];
@@ -30,16 +30,7 @@ export default Ember.Component.extend({
     },
     initialize: function(){
         var area = this.get('area');
-        this.set('filterFlag', true);
 
-        var selects = this.get('fieldChooseSelect').filter(function(item) {    //Filter for the target select.
-            if (area === 'yAxis') {
-                if (item.get('yAxisEnable') === true) { return true; }
-            } else if (area === 'xAxis') {
-                if (item.get('xAxisEnable') === true) { return true; }
-            } else if (area === 'filters') {
-                if (item.get('filterEnable') === true) { return true; }
-            }
-        });
+        this.set('filterFlag', true);
     }.on("init")
 });
