@@ -1,10 +1,12 @@
-{{#each itemArr as |item index|}}
+{{#each filterIDArr as |item index|}}
 	<div class="filter-item filter-{{add index 1}}">
-		Item {{add index 1}}
-		<div {{action "remove" index}}>Remove</div>
+		Filter {{add index 1}}
+
 		{{field-choose-area
 			area = "filters"
+			filterIndex = index
 			fieldChooseSelect = fieldChooseSelect
-			fieldChooseFilter = fieldChooseFilter}}
+			fieldChooseFilter = fieldChooseFilter
+			feed = (action 'feed')}}
 	</div>
 {{/each}}

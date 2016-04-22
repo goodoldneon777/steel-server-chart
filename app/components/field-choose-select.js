@@ -3,12 +3,15 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     classNames: ['c-fieldChooseSelect'],
     actions: {
-        changedSelect(selected) {   //When a select is changed.
-            this.set('activeOption', selected);    //Set to the selected option.
-            // this.sendAction('filterToggle', true);  //Enable filter
+        changedSelect(param) {   //When a select is changed.
+            var activeOption = param;
+            var prevOption = this.get('activeOption');
+
+            this.set('activeOption', activeOption);    //Set to the selected option.
             this.setActiveOption();
 
-            console.log(selected);
+            // this.sendAction('newActiveOption', activeOption);
+            this.sendAction('feed', ['newActiveOption', activeOption, prevOption]);
         },
         filterToggle(param) {
             var filterEnable = this.get('filterEnable');
@@ -19,6 +22,9 @@ export default Ember.Component.extend({
             } else {
                 this.sendAction('filterToggle', param);
             }
+        },
+        feed(params) {
+            this.sendAction('feed', params);
         }
     },
 	setSelect: function() {
