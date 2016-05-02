@@ -6,12 +6,5 @@ export default Ember.Route.extend({
 	      	fieldChooseSelect: this.store.findAll('fieldChooseSelect'),
 	      	fieldChooseFilter: this.store.findAll('fieldChooseFilter')
 	    });
-	},
-	start: function() {
-		// var store = this.store;
-
-		// store.findAll('fieldChooseSelect');
-
-		// this.set('selects', 'hi');
-	}.on("init")
+	}
 });

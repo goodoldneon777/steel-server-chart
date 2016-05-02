@@ -33,6 +33,7 @@ export default Ember.Component.extend({
 	    this.set('filterIDArr', filterIDArr);
 	},
 	initialize: function(){
+		this.set('parentActionProp', true);
     	var items = this.get('filterCountInit');
     	var filterIDArr = [];
 
