@@ -6,13 +6,20 @@ export default Ember.Component.extend({
 		feed(params) {
 			var feedType = params[0];
 
-			if (feedType === 'addFilter') {
-				this.addFilter();
-			} else if (feedType === 'deleteFilter') {
-				var filterIndex = params[1];
-				this.deleteFilter(filterIndex);
+			switch (feedType) {
+				case 'addFilter':
+					this.addFilter();
+					break;
+				case 'deleteFilter':
+					var filterIndex = params[1];
+					this.deleteFilter(filterIndex);
+					break;
+				case 'parse':
+					this.sendAction('feed', params);    //Bubble-up whatever was sent to the feed.
+					break;
+				default:
+					break;
 			}
-			// console.log(params);
 		}
 	},
 	addFilter: function() {

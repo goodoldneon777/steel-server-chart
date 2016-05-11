@@ -1,4 +1,4 @@
-<button {{action "parse"}}>Parse</button>
+{{!-- <button {{action "parse"}}>Parse</button> --}}
 
 <div class="field-choose-select">
 {{field-choose-select
@@ -13,7 +13,9 @@
 <div class="field-choose-filter">
 {{#if filterFlag}}
 	{{field-choose-filter
-		filters = fieldChooseFilter}}
+		filters = fieldChooseFilter
+		filterToggle = (action 'filterToggle')
+		feed = (action 'feed')}}
 {{/if}}
 </div>
 

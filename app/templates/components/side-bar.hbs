@@ -15,7 +15,9 @@
 		            <div class="panel-body">
 		    			{{main-section
 		    				fieldChooseSelect = model.fieldChooseSelect
-		    				fieldChooseFilter = model.fieldChooseFilter}}
+		    				fieldChooseFilter = model.fieldChooseFilter
+							feed = (action 'feed')
+		    				triggerParse = triggerParse}}
 		            </div>
 		        </div>
 		    </div>
@@ -30,7 +32,8 @@
 							filterCountInit = 1
 		    				fieldChooseSelect = model.fieldChooseSelect
 		    				fieldChooseFilter = model.fieldChooseFilter
-		    				parentActionParse = triggerChildActionParse}}
+							feed = (action 'feed')
+		    				triggerParse = triggerParse}}
 			  		</div>
 
 				</div>
